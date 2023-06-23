@@ -10,6 +10,7 @@ namespace OOPS_Concepts
     {
         private int id, price;
         private string name;
+        private double discount,discPrice;
 
         public int Id
         {
@@ -26,11 +27,22 @@ namespace OOPS_Concepts
             set { name = value; }
             get { return name; }
         }
-
-      public override string ToString()
+        public double Discount
         {
-           return  $"Product ID = {id}\nProduct Name = {name}\nPrice = {price}\n";
+            set { discount = value; }
+            get { return discount; }
         }
+        public void DiscDetail()
+        {
+            discPrice = price - (discount / 100);
+        }
+
+        public override string ToString()
+        {
+           return  $"Product ID = {id}\nProduct Name = {name}\nPrice = {price}\n With Discount Price = {discPrice}";
+        }
+
+      
     }
 
     public class Employee
